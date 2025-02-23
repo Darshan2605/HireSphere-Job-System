@@ -31,17 +31,11 @@ const App = () => {
         setUser(response.data.user);
         setIsAuthorized(true);
       } catch (error) {
-        console.error('Error fetching user:', error);
         setIsAuthorized(false);
       }
     };
-    
-    // Only fetch user if not already authorized
-    if (!isAuthorized) {
-      fetchUser();
-    }
-  }, []);
-
+    fetchUser();
+  }, [isAuthorized]);
 
   return (
     <>

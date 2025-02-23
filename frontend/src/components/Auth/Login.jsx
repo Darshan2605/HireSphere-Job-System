@@ -11,18 +11,11 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
-  const [roleError, setRoleError] = useState("");
 
   const { isAuthorized, setIsAuthorized } = useContext(Context);
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    
-    if (!role) {
-      setRoleError("Please select a role");
-      return;
-    }
-    
     try {
       const { data } = await axios.post(
         `${import.meta.env.VITE_BACKEND_API_URL}api/v1/user/login`,
@@ -60,20 +53,12 @@ const Login = () => {
             <div className="inputTag">
               <label>Login As</label>
               <div>
-                <select 
-                  value={role} 
-                  onChange={(e) => {
-                    setRole(e.target.value);
-                    setRoleError("");
-                  }}
-                  className={roleError ? "error" : ""}
-                >
+                <select value={role} onChange={(e) => setRole(e.target.value)}>
                   <option value="">Select Role</option>
                   <option value="Employer">Employer</option>
                   <option value="Job Seeker">Job Seeker</option>
                 </select>
                 <FaRegUser />
-                {roleError && <span className="error-message">{roleError}</span>}
               </div>
             </div>
             <div className="inputTag">
