@@ -10,7 +10,7 @@ const Jobs = () => {
   useEffect(() => {
     try {
       axios
-        .get(`${import.meta.env.VITE_BACKEND_API_URL}/api/v1/job/getall`, {
+        .get(`${import.meta.env.VITE_BACKEND_API_URL}api/v1/job/getall`, {
           withCredentials: true,
         })
         .then((res) => {
