@@ -40,7 +40,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link to={"/job/getall"} onClick={() => setShow(false)}>
-              ALL JOBS
+              HIRESPHERE JOBS
             </Link>
           </li>
           <li>
@@ -66,6 +66,11 @@ const Navbar = () => {
           ) : (
             <></>
           )}
+          <li>
+            <Link to={"/recommend-jobs"} onClick={() => setShow(false)}>
+              SEARCH JOBS
+            </Link>
+          </li>
           <li>
             <a href="https://hire-sphere-ai-mock-interview.vercel.app/" target="_self" rel="noopener noreferrer">
               AI Mock Interview
