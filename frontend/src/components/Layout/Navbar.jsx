@@ -66,7 +66,11 @@ const Navbar = () => {
           ) : (
             <></>
           )}
-
+          <li>
+            <a href="https://hire-sphere-ai-mock-interview.vercel.app/" target="_self" rel="noopener noreferrer">
+              AI Mock Interview
+            </a>
+          </li>
           <button onClick={handleLogout}>LOGOUT</button>
         </ul>
         <div className="hamburger">
