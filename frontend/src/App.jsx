@@ -29,35 +29,22 @@ const App = () => {
           }
         );
         setUser(response.data.user);
-        setIsAuthorized(true);
+        // setIsAuthorized(true);
       } catch (error) {
-        console.error('Authentication error:', error);
         setIsAuthorized(false);
-        // Clear any invalid tokens
-        await axios.post(
-          `${import.meta.env.VITE_BACKEND_API_URL}api/v1/user/logout`,
-          {},
-          { withCredentials: true }
-        );
       }
     };
-    
-    // Only fetch user if not already authorized
-    if (!isAuthorized) {
-      fetchUser();
-    }
-  }, []);
-
+    fetchUser();
+  }, [isAuthorized]);
 
   return (
     <>
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/login" element={!isAuthorized ? <Login /> : <Navigate to="/" />} />
-          <Route path="/register" element={!isAuthorized ? <Register /> : <Navigate to="/" />} />
-          <Route path="/" element={isAuthorized ? <Home /> : <Navigate to="/login" />} />
-
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/" element={<Home />} />
           <Route path="/job/getall" element={<Jobs />} />
           <Route path="/recommend-jobs" element={<RecommendJobs />} />
           <Route path="/job/:id" element={<JobDetails />} />
