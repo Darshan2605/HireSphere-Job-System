@@ -33,31 +33,17 @@ const HeroSection = () => {
       <div className="heroSection">
         <div className="container">
           <div className="title">
-            <h1>Find a job that suits</h1>
-            <h1>your interests and skills</h1>
+            <h1>HireSphere: Smart AI-Supported Job System</h1>
+            
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-              voluptate repellat modi quidem aliquid eaque ducimus ipsa et,
-              facere mollitia!
+            Find your dream job faster with HireSphere, the next-generation AI-powered job platform. From personalized job recommendations to AI-driven mock interviews, we help job seekers stand out and employers find top talent effortlessly.
             </p>
           </div>
           <div className="image">
-            <img src="/heroS.jpg" alt="hero" />
+            <img src="/HireSp.png" alt="hero" />
           </div>
         </div>
-        <div className="details">
-          {details.map((element) => {
-            return (
-              <div className="card" key={element.id}>
-                <div className="icon">{element.icon}</div>
-                <div className="content">
-                  <p>{element.title}</p>
-                  <p>{element.subTitle}</p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        
       </div>
     </>
   );
