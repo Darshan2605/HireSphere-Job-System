@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { RiLock2Fill } from "react-icons/ri";
 import { Link, Navigate } from "react-router-dom";
@@ -11,6 +11,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
+  const [redirect, setRedirect] = useState(false);
 
   const { isAuthorized, setIsAuthorized } = useContext(Context);
 
@@ -37,8 +38,17 @@ const Login = () => {
     }
   };
 
-  if(isAuthorized){
-    return <Navigate to={'/'}/>
+  useEffect(() => {
+    if (isAuthorized) {
+      const timer = setTimeout(() => {
+        setRedirect(true);
+      }, 10000); // 10 seconds
+      return () => clearTimeout(timer);
+    }
+  }, [isAuthorized]);
+
+  if (redirect) {
+    return <Navigate to="/" />;
   }
 
   return (
@@ -46,7 +56,7 @@ const Login = () => {
       <section className="authPage">
         <div className="container">
           <div className="header">
-            <img src="/HireSp.png" alt="logo" style={{borderRadius: '5%'}} />
+            <img src="/HireSp.png" alt="logo" style={{ borderRadius: '5%' }} />
             <h3>Login to your account</h3>
           </div>
           <form>
