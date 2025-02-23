@@ -186,6 +186,14 @@ const EmployerCard = ({ element, openModal }) => {
             onClick={() => openModal(element.resume.url)}
           />
         </div>
+        <div className="btn_area">
+      
+          <button>
+            <a href={`mailto:${element.email}`} style={{ color: '#fff', textDecoration: 'none' }}>
+              Send Email
+            </a>
+          </button>
+        </div>
       </div>
     </>
   );
