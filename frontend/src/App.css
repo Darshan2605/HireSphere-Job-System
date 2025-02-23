@@ -74,124 +74,128 @@ p {
 
 .authPage {
   display: flex;
-  min-width: 1500px;
-  max-width: 1500px;
-  margin: 0 auto;
-  min-height: 100vh;
-}
-.authPage .container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  background: #fff;
-  padding: 20px 20px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
 }
-.authPage .container .header {
-  display: flex;
-  gap: 15px;
-  flex-direction: column;
-}
-.authPage .container .header h3 {
-  font-size: 1.6rem;
-}
-.authPage .container .header img {
-  width: 300px;
-  height: 120px;
-  margin: 0 auto;
-}
-.authPage .container .header {
+
+.authPage .container {
+  background: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 400px;
+  width: 100%;
   text-align: center;
-  margin-bottom: 30px;
+  z-index: 1; /* Ensure form is above the background image */
 }
+
+.authPage .container .header img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.authPage .container .header h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
 .authPage .container form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
+
 .authPage .container form .inputTag {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
 }
+
 .authPage .container form .inputTag div {
   display: flex;
   align-items: center;
-  border-radius: 7px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  background: #f9f9f9;
 }
+
 .authPage .container form .inputTag div input,
 .authPage .container form .inputTag div select {
-  background: #87878778;
-  padding: 8px;
   border: none;
-  width: 100%;
-  height: 100%;
+  background: transparent;
+  flex: 1;
+  padding: 5px;
+  font-size: 1rem;
 }
-.authPage .container form .inputTag div input:focus,
-.authPage .container form .inputTag div select:focus {
-  outline: none;
-}
+
 .authPage .container form .inputTag div svg {
-  width: 10%;
-  font-size: 1.5rem;
-  background: #2d5649;
-  height: 100%;
-  padding: 8px;
-  color: #fff;
+  color: #888;
+  margin-right: 10px;
 }
+
 .authPage .container form button {
-  padding: 12px;
-  text-align: center;
-  border: none;
-  margin-top: 25px;
-  font-weight: 700;
-  color: #fff;
   background: #2d5649;
-  font-size: 1.2rem;
-  border-radius: 7px;
-}
-.authPage .container form a {
+  color: #fff;
+  border: none;
   padding: 12px;
-  text-align: center;
-  border: 1px solid #2d5649;
-  margin-top: 25px;
-  font-weight: 700;
-  color: #2d5649;
+  border-radius: 5px;
   font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.authPage .container form button:hover {
+  background: #184235;
+}
+
+.authPage .container form a {
+  color: #2d5649;
   text-decoration: none;
-  border-radius: 7px;
+  font-weight: 500;
+  margin-top: 10px;
+  transition: color 0.3s;
 }
+
+.authPage .container form a:hover {
+  color: #184235;
+}
+
 .authPage .banner {
-  flex: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-y: hidden;
-}
-.authPage .banner img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  width: 550px;
-  height: 550px;
+  height: 100%;
+  background: url('/register.png') no-repeat center center;
+  background-size: cover;
+  opacity: 0.2; /* Make the image transparent */
+  z-index: 0; /* Ensure image is behind the form */
 }
-@media (max-width: 1520px) {
+
+@media (min-width: 768px) {
   .authPage {
-    min-width: 100%;
+    flex-direction: row;
   }
-}
-@media (max-width: 830px) {
-  .authPage {
-    min-height: 100vh;
-    height: auto;
-  }
-  .authPage .container {
-    flex: none;
-    width: 100%;
-    justify-content: flex-start;
-    padding: 40px 20px;
-  }
+
   .authPage .banner {
-    flex: none;
-    display: none;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .authPage .banner img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
   }
 }
 
