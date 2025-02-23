@@ -11,7 +11,7 @@ const RecommendJobs = () => {
     setLoading(true);
     try {
       const allJobs = [];
-      const numPages = 3; // Number of pages to fetch
+      const numPages = 2; // Number of pages to fetch
 
       for (let page = 1; page <= numPages; page++) {
         const response = await axios.get('https://jsearch.p.rapidapi.com/search', {

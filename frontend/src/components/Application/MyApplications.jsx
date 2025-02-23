@@ -96,7 +96,7 @@ const MyApplications = () => {
           <h1>Applications From Job Seekers</h1>
           {applications.length <= 0 ? (
             <>
-              <h4>No Applications Found</h4>
+              <h4 style={{ textAlign: "center" }}>No Applications Found</h4>
             </>
           ) : (
             applications.map((element) => {
