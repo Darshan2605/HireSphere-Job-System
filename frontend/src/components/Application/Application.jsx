@@ -44,6 +44,14 @@ const Application = () => {
           },
         }
       );
+
+       // Send email notification
+    await axios.post('https://localhost:4000/api/v1/application/submit', {
+      email,
+      name,
+      id // Replace with actual job title
+    });
+
       setName("");
       setEmail("");
       setCoverLetter("");
