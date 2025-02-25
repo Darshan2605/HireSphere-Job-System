@@ -31,11 +31,16 @@ const App = () => {
         setUser(response.data.user);
         setIsAuthorized(true);
       } catch (error) {
+        console.error("Authentication check failed:", error);
         setIsAuthorized(false);
       }
     };
-    fetchUser();
-  }, [isAuthorized]);
+    
+    // Only run if isAuthorized is undefined to prevent loops
+    if (isAuthorized === undefined) {
+      fetchUser();
+    }
+  }, []); // Remove isAuthorized from dependencies
 
   return (
     <>
