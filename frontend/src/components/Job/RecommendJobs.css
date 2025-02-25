@@ -1,5 +1,6 @@
 .recommend-jobs {
   padding: 20px;
+  padding-top: 80px; /* Add padding to the top */
   background-color: #f9f9f9;
 }
 
@@ -89,4 +90,4 @@
 
 .search-button:hover {
   background-color: #022c11;
-} 
+}
