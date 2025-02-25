@@ -92,3 +92,21 @@
 .search-button:hover {
   background-color: #022c11;
 }
+
+/* Add responsiveness */
+@media (max-width: 768px) {
+  .search-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-input {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .search-button {
+    width: 100%;
+  }
+}
