@@ -37,6 +37,7 @@ const Register = () => {
       setPassword("");
       setPhone("");
       setRole("");
+      setUser(data.user);
       setIsAuthorized(true);
     } catch (error) {
       toast.error(error.response.data.message);

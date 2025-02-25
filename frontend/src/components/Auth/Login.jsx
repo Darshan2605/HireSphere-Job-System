@@ -31,6 +31,7 @@ const Login = () => {
       setEmail("");
       setPassword("");
       setRole("");
+      setUser(data.user);
       setIsAuthorized(true);
     } catch (error) {
       toast.error(error.response.data.message);
