@@ -40,7 +40,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link to={"/job/getall"} onClick={() => setShow(false)}>
-              HIRESPHERE JOBS
+              HIRESPHERE-JOBS
             </Link>
           </li>
           <li>
