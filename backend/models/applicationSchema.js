@@ -35,6 +35,15 @@ const applicationSchema = new mongoose.Schema({
       required: true,
     },
   },
+   category: {
+    type: String,
+    required: [true, "Please specify the job category!"],
+  },
+  jobId: {
+  type: mongoose.Schema.Types.ObjectId,
+  ref: "Job",
+  required: true,
+},
   applicantID: {
     user: {
       type: mongoose.Schema.Types.ObjectId,

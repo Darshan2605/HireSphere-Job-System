@@ -829,6 +829,29 @@ p {
   cursor: pointer;
   transition: transform 0.3s;
 }
+.category_tag {
+  
+  top: 10px;
+  right: 10px;
+  background-color: #d4edda; /* Light green */
+  color: #155724; /* Darker green text */
+  padding: 4px 8px;
+  font-weight: bold;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  border: 1px solid #c3e6cb;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  max-width: 300px;         /* 👈 Limit width */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.category_tag:hover {
+  transform: translateY(-1px); /* Slight lift on hover */
+}
+
 
 .job_seeker_card .resume img:hover {
   transform: scale(1.05);

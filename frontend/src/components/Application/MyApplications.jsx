@@ -130,7 +130,7 @@ const JobSeekerCard = ({ element, deleteApplication, openModal }) => {
           </p>
           <p>
             <span>Email:</span> {element.email}
-          </p>
+          </p> 
           <p>
             <span>Phone:</span> {element.phone}
           </p>
@@ -163,6 +163,9 @@ const EmployerCard = ({ element, openModal }) => {
     <>
       <div className="job_seeker_card">
         <div className="detail">
+          <div className="category_tag">
+          <strong> Cateogry : {element.category}</strong>
+        </div>
           <p>
             <span>Name:</span> {element.name}
           </p>
@@ -172,6 +175,7 @@ const EmployerCard = ({ element, openModal }) => {
           <p>
             <span>Phone:</span> {element.phone}
           </p>
+
           <p>
             <span>Address:</span> {element.address}
           </p>
